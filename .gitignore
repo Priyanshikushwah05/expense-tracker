@@ -1,0 +1,6 @@
+expenses.json
+__pycache__/
+*.pyc
+*.pdf
+*.csv
+.DS_Store
