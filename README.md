@@ -1,4 +1,4 @@
-# 💰 Expense Tracker CLI
+#  Expense Tracker CLI
 
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat)
@@ -8,7 +8,7 @@ A command-line expense tracking application with budget alerts, visual analytics
 
 ---
 
-## 📸 Demo
+##  Demo
 
 > **Bar chart + pie chart + daily trend — all generated from the CLI**
 
@@ -20,7 +20,7 @@ A command-line expense tracking application with budget alerts, visual analytics
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Add & manage expenses** — log transactions with category, amount, and description
 - **Budget alerts** — get warned at 80% and notified when you exceed a category budget
@@ -31,7 +31,7 @@ A command-line expense tracking application with budget alerts, visual analytics
 
 ---
 
-## 🗂 Project Structure
+##  Project Structure
 
 ```
 expense_tracker/
@@ -46,7 +46,7 @@ expense_tracker/
 
 ---
 
-## ⚙️ Setup
+##  Setup
 
 **Requirements:** Python 3.8+
 
@@ -64,7 +64,7 @@ python tracker.py add 150 Food "Lunch at canteen"
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Add an expense
 ```bash
@@ -116,7 +116,7 @@ python tracker.py export pdf --month 2024-04    # Specific month
 
 ---
 
-## 📊 Sample Output
+##  Sample Output
 
 **`python tracker.py summary`**
 ```
@@ -146,7 +146,7 @@ Transactions  : 34
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Tool | Purpose |
 |------|---------|
@@ -159,7 +159,7 @@ Transactions  : 34
 
 ---
 
-## 💡 What I Learned
+##  What I Learned
 
 - Designing a **modular CLI application** with clean separation of concerns
 - Using `argparse` subparsers to build a multi-command CLI (similar to how `git` works)
@@ -169,7 +169,7 @@ Transactions  : 34
 
 ---
 
-## 🔮 Possible Extensions
+##  Possible Extensions
 
 - [ ] SQLite backend instead of JSON (for larger datasets)
 - [ ] Web dashboard using Flask/Streamlit
@@ -178,6 +178,6 @@ Transactions  : 34
 
 ---
 
-## 📄 License
+##  License
 
 MIT License — free to use and modify.
