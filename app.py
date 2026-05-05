@@ -1,10 +1,8 @@
 import os
-
-
+import json
+from datetime import date
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import json, os
-from datetime import date
 
 app = Flask(__name__)
 CORS(app)
@@ -47,7 +45,6 @@ def add_expense():
     data["expenses"].append(entry)
     data["next_id"] += 1
     save(data)
-    # budget alert
     alert = None
     budgets = data.get("budgets", {})
     cat = entry["category"]
@@ -57,9 +54,9 @@ def add_expense():
         budget = budgets[cat]
         pct = spent / budget * 100
         if pct >= 100:
-            alert = {"type": "exceeded", "message": f"You have exceeded your {cat} budget! (₹{spent:.0f} / ₹{budget:.0f})"}
+            alert = {"type": "exceeded", "message": f"You have exceeded your {cat} budget! (Rs.{spent:.0f} / Rs.{budget:.0f})"}
         elif pct >= 80:
-            alert = {"type": "warning", "message": f"{pct:.0f}% of your {cat} budget used (₹{spent:.0f} / ₹{budget:.0f})"}
+            alert = {"type": "warning", "message": f"{pct:.0f}% of your {cat} budget used (Rs.{spent:.0f} / Rs.{budget:.0f})"}
     return jsonify({"expense": entry, "alert": alert}), 201
 
 @app.route("/api/expenses/<int:expense_id>", methods=["DELETE"])
@@ -109,8 +106,4 @@ def get_summary():
         "daily": [{"date": k, "amount": v} for k, v in sorted(daily.items())]
     })
 
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
